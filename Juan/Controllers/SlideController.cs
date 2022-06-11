@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Juan.Controllers
 {
     public class SlideController : Controller
-    {
+    { 
         public IActionResult Index()
         {
             return View();
