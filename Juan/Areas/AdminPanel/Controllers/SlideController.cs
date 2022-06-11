@@ -1,6 +1,7 @@
 ﻿using Juan.DAL;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Juan.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Juan.Areas.AdminPanel.Controllers
 {
+    [Area("AdminPanel")]
     public class SlideController : Controller
     { 
-        [Area("AdminPanel")]
         private AppDbContext _context { get; }
         private IWebHostEnvironment _env { get; }
         public SlideController(AppDbContext context, IWebHostEnvironment env)
