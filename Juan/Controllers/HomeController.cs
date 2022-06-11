@@ -1,6 +1,6 @@
 ﻿using Juan.DAL;
 using Juan.Models;
-using Juan.ViewModel;
+using Juan.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
