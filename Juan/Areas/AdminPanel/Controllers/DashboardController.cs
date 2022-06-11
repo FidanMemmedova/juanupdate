@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Juan.Areas.AdminPanel.Controllers
 {
-    [Area]
+    [Area("AdminPanel")]
     public class DashboardController : Controller
     {
         public IActionResult Index()
