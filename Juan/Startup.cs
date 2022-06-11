@@ -27,7 +27,7 @@ namespace Juan
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(options =>
             {
-                object p = options.UseSqlServer(_config["ConnectionStrings:Default"]);
+               options.UseSqlServer(_config["ConnectionStrings:Default"]);
             });
         }
 
@@ -46,7 +46,7 @@ namespace Juan
             {
                 endpoints.MapControllerRoute(
                     "default",
-                    "{controller=Home}/{action=Index}"
+                    "{controller=Home}/{action=Index}/{Id?}"
                     );
             });
         }
