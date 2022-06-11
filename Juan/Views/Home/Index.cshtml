@@ -11,47 +11,22 @@
                 <div class="col-12">
                     <div class="hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
                         <!-- single slider item start -->
-                        <div class="hero-single-slide">
-                            @foreach (var slide in Model.Slides)
-                            {
-                                <div> <img src="img/@slide.Image" alt=""> </div>
-                            }
-                        <div class="hero-slider-content slide-1">
-                            @foreach (var subtitle in Model.Slides)
-                            {
-                                <h5 class="slide-subtitle">@subtitle.Subtitle</h5>
-                            }
-                            @foreach (var title in Model.Slides)
-                            {
-                                <h2 class="slide-title">@title.Tile</h2>
-                            }
-                            @foreach (var description in Model.Slides)
-                            {
-                                <p class="slide-desc">
-                                    @description.Description
-                                </p>
-                            }
-
-                            <a href="shop.html" class="btn btn-hero">SHOP NOW</a>
-                        </div>
-                            </div>
-                        </div>
-                        <!-- single slider item end -->
-                        <!-- single slider item start -->
-                        <div class="hero-single-slide">
-                            <div class="hero-slider-item bg-img"
-                                 data-bg="assets/img/slider/slider-2.jpg">
-                                <div class="hero-slider-content slide-1">
-                                    <h5 class="slide-subtitle">Best Selling!</h5>
-                                    <h2 class="slide-title">Top Collection</h2>
-                                    <p class="slide-desc">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed do eiusmod tempor incidid
-                                    </p>
-                                    <a href="shop.html" class="btn btn-hero">SHOP NOW</a>
+                        @foreach (var slide in Model.Slides)
+                        {
+                            <div class="hero-single-slide">
+                                <div class="hero-slider-item bg-img"
+                                     data-bg="assets/img/slider/@slide.Image">
+                                    <div class="hero-slider-content slide-1">
+                                        <h5 class="slide-subtitle">@slide.Subtitle</h5>
+                                        <h2 class="slide-title">@slide.Tile</h2>
+                                        <p class="slide-desc">
+                                            @slide.Description
+                                        </p>
+                                        <a href="shop.html" class="btn btn-hero">SHOP NOW</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                         }
                         <!-- single slider item end -->
                     </div>
                 </div>
