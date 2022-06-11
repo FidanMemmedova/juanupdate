@@ -16,15 +16,24 @@
                             {
                                 <div> <img src="img/@slide.Image" alt=""> </div>
                             }
-                                <div class="hero-slider-content slide-1">
-                                    <h5 class="slide-subtitle">Top Selling!</h5>
-                                    <h2 class="slide-title">New Collection</h2>
-                                    <p class="slide-desc">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed do eiusmod tempor incidid
-                                    </p>
-                                    <a href="shop.html" class="btn btn-hero">SHOP NOW</a>
-                                </div>
+                        <div class="hero-slider-content slide-1">
+                            @foreach (var subtitle in Model.Slides)
+                            {
+                                <h5 class="slide-subtitle">@subtitle.Subtitle</h5>
+                            }
+                            @foreach (var title in Model.Slides)
+                            {
+                                <h2 class="slide-title">@title.Tile</h2>
+                            }
+                            @foreach (var description in Model.Slides)
+                            {
+                                <p class="slide-desc">
+                                    @description.Description
+                                </p>
+                            }
+
+                            <a href="shop.html" class="btn btn-hero">SHOP NOW</a>
+                        </div>
                             </div>
                         </div>
                         <!-- single slider item end -->
