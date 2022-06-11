@@ -50,7 +50,7 @@ namespace Juan.Areas.AdminPanel.Controllers
             //return Json(slide.Photo.ContentType.Contains("image/"));
             //return Json("Ok");
 
-            slide.Image = await slide.Photo.SaveFileAsync(_env.WebRootPath, "img");
+            slide.Image = await slide.Photo.SaveFileAsync(_env.WebRootPath, "assets", "images", "slider");
             await _context.Slides.AddAsync(slide);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -66,7 +66,7 @@ namespace Juan.Areas.AdminPanel.Controllers
             {
                 return NotFound();
             }
-            var path = Helper.GetPath(_env.WebRootPath, "img", slider.Image);
+            var path = Helper.GetPath(_env.WebRootPath, "assets","images","slider", slider.Image);
             if (System.IO.File.Exists(path))
             {
                 System.IO.File.Delete(path);
@@ -115,7 +115,7 @@ namespace Juan.Areas.AdminPanel.Controllers
                 ModelState.AddModelError("Photo", "Type of file must be image");
                 return View();
             }
-            slide.Image = await slide.Photo.SaveFileAsync(_env.WebRootPath, "img");
+            slide.Image = await slide.Photo.SaveFileAsync(_env.WebRootPath, "assets", "images", "slider");
             await _context.Slides.AddAsync(slide);
             await _context.SaveChangesAsync();
             var _slide = _context.Slides.Find(id);
@@ -123,7 +123,7 @@ namespace Juan.Areas.AdminPanel.Controllers
             {
                 return NotFound();
             }
-            var path = Helper.GetPath(_env.WebRootPath, "img", _slide.Image);
+            var path = Helper.GetPath(_env.WebRootPath, "assets", "images", "slider", _slide.Image);
             if (System.IO.File.Exists(path))
             {
                 System.IO.File.Delete(path);
