@@ -2,6 +2,7 @@
 using Juan.Models;
 using Juan.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace Juan.Controllers
         {
             HomeViewModel home = new HomeViewModel
             {
-                Slides = _context.slid,
+                Slides = _context.Slides.ToList(),
             };
             return View(home);
         }

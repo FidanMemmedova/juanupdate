@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Juan"
+    "\\Juan",
+    "\\Juan\\Controllers",
+    "\\Juan\\DAL"
   ],
-  "SelectedNode": "\\Juan.sln",
+  "SelectedNode": "\\Juan\\Controllers\\HomeController.cs",
   "PreviewInSolutionExplorer": false
 }

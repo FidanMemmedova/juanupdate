@@ -8,7 +8,6 @@ namespace Juan.ViewModel
 {
     public class HomeViewModel
     {
-        public List<Slider> Slides { get; set; }
-
+        public List<Slide> Slides { get; set; }
     }
 }
