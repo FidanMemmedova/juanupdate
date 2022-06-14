@@ -12,5 +12,8 @@ namespace Juan.DAL
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
         {}
         public DbSet<Slide> Slides { get; set; }
+        public DbSet<Card> Cards { get; set; }
+        public DbSet<ShoesCard> ShoesCards { get; set; }
+        public DbSet<Discount> Discounts { get; set; }
     }
 }

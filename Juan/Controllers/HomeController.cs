@@ -22,6 +22,9 @@ namespace Juan.Controllers
             HomeViewModel home = new HomeViewModel
             {
                 Slides = _context.Slides.ToList(),
+                Cards=_context.Cards.ToList(),
+                ShoesCards=_context.ShoesCards.ToList(),
+                Discounts=_context.Discounts.ToList()
             };
             return View(home);
         }

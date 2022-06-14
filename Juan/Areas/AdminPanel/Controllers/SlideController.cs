@@ -50,7 +50,7 @@ namespace Juan.Areas.AdminPanel.Controllers
             //return Json(slide.Photo.ContentType.Contains("image/"));
             //return Json("Ok");
 
-            slide.Image = await slide.Photo.SaveFileAsync(_env.WebRootPath, "assets", "images", "slider");
+            slide.Image = await slide.Photo.SaveFileAsync(_env.WebRootPath, "assets", "img", "slider");
             await _context.Slides.AddAsync(slide);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -66,7 +66,7 @@ namespace Juan.Areas.AdminPanel.Controllers
             {
                 return NotFound();
             }
-            var path = Helper.GetPath(_env.WebRootPath, "assets","images","slider", slider.Image);
+            var path = Helper.GetPath(_env.WebRootPath, "assets","img","slider", slider.Image);
             if (System.IO.File.Exists(path))
             {
                 System.IO.File.Delete(path);
@@ -115,20 +115,13 @@ namespace Juan.Areas.AdminPanel.Controllers
                 ModelState.AddModelError("Photo", "Type of file must be image");
                 return View();
             }
-            slide.Image = await slide.Photo.SaveFileAsync(_env.WebRootPath, "assets", "images", "slider");
-            await _context.Slides.AddAsync(slide);
-            await _context.SaveChangesAsync();
-            var _slide = _context.Slides.Find(id);
-            if (_slide == null)
-            {
-                return NotFound();
-            }
-            var path = Helper.GetPath(_env.WebRootPath, "assets", "images", "slider", _slide.Image);
+            var path = Helper.GetPath(_env.WebRootPath, "assets", "img", "slider", slider.Image);
             if (System.IO.File.Exists(path))
             {
                 System.IO.File.Delete(path);
             }
-            _context.Slides.Remove(_slide);
+            slider.Image = await slide.Photo.SaveFileAsync(_env.WebRootPath, "assets", "img", "slider");
+            //slider.Tile = slide.Tile;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
