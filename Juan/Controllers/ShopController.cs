@@ -19,7 +19,7 @@ namespace Juan.Controllers
         {
             ShopViewModel shop = new ShopViewModel
             {
-                ShopProducts = _context.ShopProducts.Take(4).ToList()
+                ShopProducts = _context.ShopProducts.Skip(4).Take(4).ToList()
             };
             return View(shop);
         }
