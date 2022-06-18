@@ -1,6 +1,17 @@
 (function ($) {
 	"use strict";
 
+	$(document).on('click', '#loadMore', function () {
+		$.ajax({
+			type: "GET",
+			url: "/Shop/Load",
+			success: function (res) {
+				console.log(res);
+			}
+		});
+	});
+
+
 	// Sticky menu 
 	var $window = $(window);
 	$window.on('scroll', function () {
