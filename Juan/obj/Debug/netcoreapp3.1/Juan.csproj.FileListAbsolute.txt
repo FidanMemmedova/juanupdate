@@ -306,3 +306,4 @@ C:\Users\Fidan Mammadova\Desktop\juanupdate\Juan\obj\Debug\netcoreapp3.1\Juan.cs
 C:\Users\Fidan Mammadova\Desktop\juanupdate\Juan\obj\Debug\netcoreapp3.1\Juan.dll
 C:\Users\Fidan Mammadova\Desktop\juanupdate\Juan\obj\Debug\netcoreapp3.1\Juan.pdb
 C:\Users\Fidan Mammadova\Desktop\juanupdate\Juan\obj\Debug\netcoreapp3.1\Juan.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\juanupdate\Juan\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Index.cshtml.g.cs
