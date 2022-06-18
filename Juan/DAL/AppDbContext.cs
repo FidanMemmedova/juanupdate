@@ -15,5 +15,6 @@ namespace Juan.DAL
         public DbSet<Card> Cards { get; set; }
         public DbSet<ShoesCard> ShoesCards { get; set; }
         public DbSet<Discount> Discounts { get; set; }
+        public DbSet<ShopProduct> ShopProducts { get; set; }
     }
 }
