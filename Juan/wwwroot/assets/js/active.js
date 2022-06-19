@@ -3,11 +3,11 @@
 
 	$(document).on('click', '#loadMore', function () {
 		$.ajax({
-			type: "GET",
-			url: "/Shop/Load",
+			url: "http://localhost:31621/Shop/Load",
+			method: "GET",
 			success: function (res) {
-				//$("#ShopProducts").append(res)
-				console.log(res)
+				$("#ShopProducts").append(res)
+				//console.log(res)
 			}
 		});
 	});

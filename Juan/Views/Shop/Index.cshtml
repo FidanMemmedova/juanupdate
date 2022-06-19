@@ -149,7 +149,7 @@
                         <!-- shop product top wrap start -->
                         <!-- product item list start -->
                         <div class="shop-product-wrap grid-view row mbn-50">
-                            @foreach (var product in Model.ShopProducts)
+                            @*foreach (var product in Model.ShopProducts)
                             {
                                 <div class="col-lg-4 col-sm-6">
                                     <!-- product grid item start -->
@@ -207,10 +207,11 @@
                                                 </a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>*@Z
                                     <!-- product list item start -->
                                 </div>
                              }
+                            <partial name="_ProductPartial" model="@Model.ShopProducts"/>
                         </div>
                         <div class="row justify-content-center">
                             <button class="btn btn-primary" id="loadMore">Load More...</button>

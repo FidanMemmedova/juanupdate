@@ -1,4 +1,5 @@
 ﻿using Juan.DAL;
+using Juan.Models;
 using Juan.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -26,8 +27,8 @@ namespace Juan.Controllers
         }
         public IActionResult Load()
         {
-            var ShopProducts = _context.ShopProducts.OrderByDescending(p=>p.Id).Skip(4).Take(4).ToList();
-            return Json(ShopProducts); 
+            List<ShopProduct> ShopProducts = _context.ShopProducts.OrderByDescending(p=>p.Id).Skip(4).Take(4).ToList();
+            return PartialView("_ProductPartial",ShopProducts); 
 
         }
     }
