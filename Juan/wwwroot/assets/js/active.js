@@ -6,7 +6,8 @@
 			type: "GET",
 			url: "/Shop/Load",
 			success: function (res) {
-				console.log(res);
+				//$("#ShopProducts").append(res)
+				console.log(res)
 			}
 		});
 	});

@@ -26,7 +26,7 @@ namespace Juan.Controllers
         }
         public IActionResult Load()
         {
-            var ShopProducts = _context.ShopProducts.Skip(4).Take(4).ToList();
+            var ShopProducts = _context.ShopProducts.OrderByDescending(p=>p.Id).Skip(4).Take(4).ToList();
             return Json(ShopProducts); 
 
         }
