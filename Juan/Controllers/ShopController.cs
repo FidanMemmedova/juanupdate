@@ -3,6 +3,7 @@ using Juan.Models;
 using Juan.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ReflectionIT.Mvc.Paging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,13 @@ namespace Juan.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int page=1)
         {
+            var query = _context.ShopProducts.AsNoTracking().OrderByDescending(p => p.Id);
+            var model = await PagingList.CreateAsync(query, 5, page);
             ShopViewModel shop = new ShopViewModel
             {
-                ShopProducts = _context.ShopProducts.Skip(4).Take(4).ToList()
+                ShopProducts = _context.ShopProducts.Take(4).ToList()
             };
             return View(shop);
         }

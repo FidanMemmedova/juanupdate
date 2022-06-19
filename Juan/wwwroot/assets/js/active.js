@@ -6,8 +6,8 @@
 			url: "http://localhost:31621/Shop/Load",
 			method: "GET",
 			success: function (res) {
-				$("#ShopProducts").append(res)
-				//console.log(res)
+				console.log(res);
+				$("#shopproducts").append(res);
 			}
 		});
 	});

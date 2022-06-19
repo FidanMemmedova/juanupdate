@@ -1,4 +1,7 @@
 ﻿@model ShopViewModel
+@*@using ReflectionIT.Mvc.Paging
+    @addTagHelper *,ReflectionIT.Mvc.Paging
+    @model ReflectionIT.Mvc.Paging.PagingList<Juan.Models.ShopProduct>*@
 @{
     ViewData["Title"] = "Index";
 }
@@ -148,91 +151,96 @@
                         </div>
                         <!-- shop product top wrap start -->
                         <!-- product item list start -->
-                        <div class="shop-product-wrap grid-view row mbn-50">
+                        <div class="shop-product-wrap grid-view row mbn-50" id="shopproducts">
+                            <partial name="_ProductPartial" model="@Model.ShopProducts" />
                             @*foreach (var product in Model.ShopProducts)
-                            {
-                                <div class="col-lg-4 col-sm-6">
-                                    <!-- product grid item start -->
-                                    <div class="product-item mb-53">
-                                        <div class="product-thumb">
-                                            <a href="product-details.html">
-                                                <img src="~/assets/img/product/@product.Image" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="product-content">
-                                            <h5 class="product-name">
-                                                <a href="product-details.html">@product.ProductName</a>
-                                            </h5>
-                                            <div class="price-box">
-                                                <span class="price-regular">$@product.Price.00</span>
-                                                <span class="price-old"><del>$@product.Discount.00</del></span>
+                                {
+                                    <div class="col-lg-4 col-sm-6">
+                                        <!-- product grid item start -->
+                                        <div class="product-item mb-53">
+                                            <div class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img src="~/assets/img/product/@product.Image" alt="">
+                                                </a>B
                                             </div>
-                                            <div class="product-action-link">
-                                                <a href="#" data-toggle="tooltip" title="Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                <a href="#" data-toggle="tooltip" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                <a href="#" data-toggle="modal" data-target="#quick_view">
-                                                    <span data-toggle="tooltip"
-                                                          title="Quick View"><i class="ion-ios-eye-outline"></i></span>
+                                            <div class="product-content">
+                                                <h5 class="product-name">
+                                                    <a href="product-details.html">@product.ProductName</a>
+                                                </h5>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$@product.Price.00</span>
+                                                    <span class="price-old"><del>$@product.Discount.00</del></span>
+                                                </div>
+                                                <div class="product-action-link">
+                                                    <a href="#" data-toggle="tooltip" title="Wishlist"><i class="ion-android-favorite-outline"></i></a>
+                                                    <a href="#" data-toggle="tooltip" title="Add To Cart"><i class="ion-bag"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick_view">
+                                                        <span data-toggle="tooltip"
+                                                              title="Quick View"><i class="ion-ios-eye-outline"></i></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product grid item end -->
+                                        <!-- product list item start -->
+                                        <div class="product-list-item mb-30">
+                                            <div class="product-thumb">
+                                                <a href="product-details.html">
+                                                    <img src="assets/img/product/product-1.jpg" alt="product thumb">
                                                 </a>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <!-- product grid item end -->
-                                    <!-- product list item start -->
-                                    <div class="product-list-item mb-30">
-                                        <div class="product-thumb">
-                                            <a href="product-details.html">
-                                                <img src="assets/img/product/product-1.jpg" alt="product thumb">
-                                            </a>
-                                        </div>
-                                        <div class="product-content-list">
-                                            <h5 class="product-name">
-                                                <a href="product-details.html">Leather Mens Slipper</a>
-                                            </h5>
-                                            <div class="price-box">
-                                                <span class="price-regular">$80.00</span>
-                                                <span class="price-old"><del>$70.00</del></span>
+                                            <div class="product-content-list">
+                                                <h5 class="product-name">
+                                                    <a href="product-details.html">Leather Mens Slipper</a>
+                                                </h5>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$80.00</span>
+                                                    <span class="price-old"><del>$70.00</del></span>
+                                                </div>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere
+                                                    metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet
+                                                    sem vitae urna fringilla tempus.
+                                                </p>
+                                                <div class="product-link-2 position-static">
+                                                    <a href="#" data-toggle="tooltip" title="Wishlist"><i class="ion-android-favorite-outline"></i></a>
+                                                    <a href="#" data-toggle="tooltip" title="Add To Cart"><i class="ion-bag"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick_view">
+                                                        <span data-toggle="tooltip"
+                                                              title="Quick View"><i class="ion-ios-eye-outline"></i></span>
+                                                    </a>
+                                                </div>
                                             </div>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere
-                                                metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet
-                                                sem vitae urna fringilla tempus.
-                                            </p>
-                                            <div class="product-link-2 position-static">
-                                                <a href="#" data-toggle="tooltip" title="Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                <a href="#" data-toggle="tooltip" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                <a href="#" data-toggle="modal" data-target="#quick_view">
-                                                    <span data-toggle="tooltip"
-                                                          title="Quick View"><i class="ion-ios-eye-outline"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>*@Z
-                                    <!-- product list item start -->
-                                </div>
-                             }
-                            <partial name="_ProductPartial" model="@Model.ShopProducts"/>
+                                        </div>*@
+                            <!-- product list item start -->
                         </div>
-                        <div class="row justify-content-center">
-                            <button class="btn btn-primary" id="loadMore">Load More...</button>
-                        </div>
-                        <!-- product item list end -->
-                        <!-- start pagination area -->
-                        <div class="paginatoin-area text-center mt-45">
-                            <ul class="pagination-box">
-                                <li><a class="Previous" href="#"><i class="ion-ios-arrow-left"></i></a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a class="Next" href="#"><i class="ion-ios-arrow-right"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- end pagination area -->
+
+
                     </div>
+                    <div class="row justify-content-center mt-5">
+                        <button class="btn btn-primary" id="loadMore">Load More...</button>
+                    </div>
+                    <!-- product item list end -->
+                    <!-- start pagination area -->
+                    <div aria-label="ShopProduct Paging" class="paginatoin-area text-center mt-45">
+                        @*@await this.Component.InvokeAsync("Pager", new {pagingList=this.Model})*@
+                        <ul class="pagination-box">
+                            <li><a class="Previous" href="#"><i class="ion-ios-arrow-left"></i></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a class="Next" href="#"><i class="ion-ios-arrow-right"></i></a></li>
+                        </ul>
+                    </div>
+                    <div aria-label="Suppliers navigation example">
+                        <vc:pager paging-list="@Model" />
+                    </div>
+                    <!-- end pagination area -->
                 </div>
-                <!-- shop main wrapper end -->
             </div>
+            <!-- shop main wrapper end -->
         </div>
+    </div>
     </div>
     <!-- page main wrapper end -->
 </main>
