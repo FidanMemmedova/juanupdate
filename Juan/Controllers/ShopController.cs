@@ -28,15 +28,15 @@ namespace Juan.Controllers
             {
                 page = 1;
             }
-            int recsCount = ShopProducts.Count();
+            int recsCount = product.Count();
             var pagination = new Pagination(recsCount, page, pageSize);
 
             int recSkip = (page - 1) * pageSize;
-            var data = ShopProducts.Skip(recSkip).Take(pagination.PageSize).ToList();
+            var data = ShopProduct.Skip(recSkip).Take(pagination.PageSize).ToList();
             this.ViewBag.Pagination = pagination;
             ShopViewModel shop = new ShopViewModel
             {
-                ShopProducts = data;
+                ShopProducts = data
             };
             return View(shop);
         }
