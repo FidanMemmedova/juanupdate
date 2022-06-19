@@ -4,6 +4,16 @@
     @model ReflectionIT.Mvc.Paging.PagingList<Juan.Models.ShopProduct>*@
 @{
     ViewData["Title"] = "Index";
+
+    Pagination pagination = new Pagination();
+
+    int pageNo = 0;
+
+    if (ViewBag.Pagination != null)
+    {
+        pagination = ViewBag.Pagination;
+        pageNo = pagination.CurrentPage;
+    }
 }
 
 <!-- main wrapper start -->

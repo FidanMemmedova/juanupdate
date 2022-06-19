@@ -22,17 +22,17 @@ namespace Juan.Controllers
         }
         public IActionResult Index(int page=1)
         {
-            var query = _context.ShopProducts.AsNoTracking().OrderByDescending(p => p.Id).ToList();
-            const int pageSize = 8;
+            var query = _context.ShopProducts.ToList();
+            const int pageSize = 12;
             if (page < 1)
             {
                 page = 1;
             }
-            int recsCount = product.Count();
+            int recsCount = query.Count();
             var pagination = new Pagination(recsCount, page, pageSize);
 
             int recSkip = (page - 1) * pageSize;
-            var data = ShopProduct.Skip(recSkip).Take(pagination.PageSize).ToList();
+            var data = query.Skip(recSkip).Take(pagination.PageSize).ToList();
             this.ViewBag.Pagination = pagination;
             ShopViewModel shop = new ShopViewModel
             {
@@ -40,11 +40,11 @@ namespace Juan.Controllers
             };
             return View(shop);
         }
-        //public IActionResult Load()
-        //{
-        //    List<ShopProduct> ShopProducts = _context.ShopProducts.OrderByDescending(p=>p.Id).Skip(4).Take(4).ToList();
-        //    return PartialView("_ProductPartial",ShopProducts); 
+        public IActionResult Load()
+        {
+            List<ShopProduct> ShopProducts = _context.ShopProducts.OrderByDescending(p => p.Id).Skip(4).Take(4).ToList();
+            return PartialView("_ProductPartial", ShopProducts);
 
-        //}
+        }
     }
 }
