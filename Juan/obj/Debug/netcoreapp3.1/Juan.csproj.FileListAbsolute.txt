@@ -317,3 +317,12 @@ C:\Users\ASUS\Desktop\juanupdate\Juan\bin\Debug\netcoreapp3.1\Microsoft.DotNet.P
 C:\Users\ASUS\Desktop\juanupdate\Juan\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 C:\Users\ASUS\Desktop\juanupdate\Juan\bin\Debug\netcoreapp3.1\ReflectionIT.Mvc.Paging.Views.dll
 C:\Users\ASUS\Desktop\juanupdate\Juan\bin\Debug\netcoreapp3.1\ReflectionIT.Mvc.Paging.dll
+C:\Users\ASUS\Desktop\juanupdate\Juan\obj\Debug\netcoreapp3.1\Razor\Views\ShopProducts\Create.cshtml.g.cs
+C:\Users\ASUS\Desktop\juanupdate\Juan\obj\Debug\netcoreapp3.1\Razor\Views\ShopProducts\Delete.cshtml.g.cs
+C:\Users\ASUS\Desktop\juanupdate\Juan\obj\Debug\netcoreapp3.1\Razor\Views\ShopProducts\Details.cshtml.g.cs
+C:\Users\ASUS\Desktop\juanupdate\Juan\obj\Debug\netcoreapp3.1\Razor\Views\ShopProducts\Edit.cshtml.g.cs
+C:\Users\ASUS\Desktop\juanupdate\Juan\obj\Debug\netcoreapp3.1\Razor\Views\ShopProducts\Index.cshtml.g.cs
+C:\Users\ASUS\Desktop\juanupdate\Juan\bin\Debug\netcoreapp3.1\cloudscribe.Pagination.Models.dll
+C:\Users\ASUS\Desktop\juanupdate\Juan\bin\Debug\netcoreapp3.1\cloudscribe.Web.Pagination.dll
+C:\Users\ASUS\Desktop\juanupdate\Juan\bin\Debug\netcoreapp3.1\PagedList.dll
+C:\Users\ASUS\Desktop\juanupdate\Juan\bin\Debug\netcoreapp3.1\PagedList.Mvc.dll
